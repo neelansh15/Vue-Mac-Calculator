@@ -78,7 +78,7 @@ export default {
             // this.current = ''
         },
         divide(){
-            this.operator = (a, b) => a / b;
+            this.operator = (a, b) => b / a;
             this.setPrevious()
         },
         multiply(){
