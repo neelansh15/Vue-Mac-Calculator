@@ -1,7 +1,16 @@
 <template>
   <div class="calculator">
-      <div class="display">{{ current || '0'}}</div>
-      <div class="btn" @click="clear">C</div>
+      <div class="display">
+          <div class="topbar">
+              <div class="circle red"></div>
+              <div class="circle yellow"></div>
+              <div class="circle green"></div>
+          </div>
+          <div class="text">
+            {{ current || '0'}}
+          </div>
+      </div>
+      <div class="btn" @click="clear">AC</div>
       <div class="btn" @click="sign">+ / -</div>
       <div class="btn" @click="percent">%</div>
       <div class="btn operator" @click="divide" :class="opclicked">/</div>
@@ -98,7 +107,7 @@ export default {
 <style scoped>
 .calculator{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(50px, auto);
@@ -106,14 +115,38 @@ export default {
     min-width: 40%;
     max-width: 60%;
     margin: auto;
+
+    color: #1c1c1c;
 }
 .display{
-    padding: 1em 0.5em 0.5em 0.5em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     font-size: 2.5rem;
     text-align: right;
     grid-column: 1 / 5;
-    background-color: #181818;
+    background-color: #505050;
     color: white;
+}
+.display .text{
+    padding-top: 1.5rem;
+}
+.topbar{
+    float: left;
+    display: flex;
+}
+.topbar .circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin: 0 0.25rem;
+}
+.topbar .red{
+    background-color: #FF605c;
+}
+.topbar .yellow{
+    background-color: #FFBD44;
+}
+.topbar .green{
+    background-color: #00CA4E;
 }
 .zero{
     grid-column: 1 / 3;
@@ -124,6 +157,8 @@ export default {
     background-color: #eeeeee;
     border: 1px solid #e2e2e2;
     cursor: pointer;
+    
+    padding-top: 0.5rem;
 
     /* Set text not selectable */
     -webkit-user-select: none;
@@ -134,7 +169,7 @@ export default {
             user-select: none;
 }
 .operator{
-    background-color: orange;
+    background-color: #ff9500;
     color: white;
 }
 .operator.clicked{
