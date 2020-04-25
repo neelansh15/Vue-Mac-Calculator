@@ -5,20 +5,20 @@
       <div class="btn" @click="sign">+ / -</div>
       <div class="btn" @click="percent">%</div>
       <div class="btn operator">/</div>
-      <div class="btn">7</div>
-      <div class="btn">8</div>
-      <div class="btn">9</div>
+      <div class="btn" @click="append(7)">7</div>
+      <div class="btn" @click="append(8)">8</div>
+      <div class="btn" @click="append(9)">9</div>
       <div class="btn operator">x</div>
-      <div class="btn">4</div>
-      <div class="btn">5</div>
-      <div class="btn">6</div>
+      <div class="btn" @click="append(4)">4</div>
+      <div class="btn" @click="append(5)">5</div>
+      <div class="btn" @click="append(6)">6</div>
       <div class="btn operator">-</div>
-      <div class="btn">1</div>
-      <div class="btn">2</div>
-      <div class="btn">3</div>
+      <div class="btn" @click="append(1)">1</div>
+      <div class="btn" @click="append(2)">2</div>
+      <div class="btn" @click="append(3)">3</div>
       <div class="btn operator">+</div>
-      <div class="btn zero">0</div>
-      <div class="btn">.</div>
+      <div class="btn zero" @click="append(0)">0</div>
+      <div class="btn" @click="dot">.</div>
       <div class="btn operator">=</div>
   </div>
 </template>
@@ -38,7 +38,15 @@ export default {
             this.current = this.current.charAt(0) === '-' ? this.current.slice(1) : '-' + this.current
         },
         percent(){
-            this.current = parseFloat(this.current) / 100
+            this.current = (parseFloat(this.current) / 100).toString()
+        },
+        append(num){
+            this.current += num.toString()
+        },
+        dot(){
+            if(this.current.indexOf('.') === -1){
+                this.append('.')
+            }
         }
     }
 }
@@ -52,6 +60,8 @@ export default {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(50px, auto);
     width: 40%;
+    min-width: 40%;
+    max-width: 60%;
     margin: auto;
 }
 .display{
@@ -64,7 +74,8 @@ export default {
 }
 .zero{
     grid-column: 1 / 3;
-    /* text-align: left; */
+    text-align: left;
+    padding-left: 20%;
 }
 .btn{
     background-color: #eeeeee;
