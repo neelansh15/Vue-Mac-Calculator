@@ -105,6 +105,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 .calculator{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.5rem;
@@ -128,6 +130,7 @@ export default {
 }
 .display .text{
     padding-top: 1.5rem;
+    font-family: 'Open Sans';
 }
 .topbar{
     float: left;
@@ -154,8 +157,8 @@ export default {
     padding-left: 20%;
 }
 .btn{
-    background-color: #eeeeee;
-    border: 1px solid #e2e2e2;
+    background-color: #D4D4D2;
+    border: 1px solid rgba(85, 85, 85, 0.6);
     cursor: pointer;
     
     padding-top: 0.5rem;
