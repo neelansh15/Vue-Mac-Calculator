@@ -113,9 +113,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(50px, auto);
-    width: 40%;
-    min-width: 40%;
-    max-width: 60%;
+    width: 300px;
     margin: auto;
 
     color: #1c1c1c;
@@ -157,7 +155,8 @@ export default {
     padding-left: 20%;
 }
 .btn{
-    background-color: #D4D4D2;
+    /* background-color: #D4D4D2; */
+    background-color: rgb(226, 226, 226);
     border: 1px solid rgba(85, 85, 85, 0.6);
     cursor: pointer;
     
