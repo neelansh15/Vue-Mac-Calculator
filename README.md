@@ -1,4 +1,7 @@
-# calculator
+# Vue Mac Calculator
+A simple macOS calculator made in VueJS.  
+
+![VueJS Calculator](images/1.png)
 
 ## Project setup
 ```
