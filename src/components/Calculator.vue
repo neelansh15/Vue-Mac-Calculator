@@ -1,35 +1,41 @@
 <template>
-  <div class="calculator">
-      <div class="display">
-          <div class="topbar">
-              <div class="circle red"></div>
-              <div class="circle yellow"></div>
-              <div class="circle green"></div>
-          </div>
-          <div class="text">
-            {{ current || '0'}}
-          </div>
-      </div>
-      <div class="btn" @click="clear">AC</div>
-      <div class="btn" @click="sign">+ / -</div>
-      <div class="btn" @click="percent">%</div>
-      <div class="btn operator" @click="divide" :class="opclicked">/</div>
-      <div class="btn" @click="append(7)">7</div>
-      <div class="btn" @click="append(8)">8</div>
-      <div class="btn" @click="append(9)">9</div>
-      <div class="btn operator" @click="multiply" :class="opclicked">x</div>
-      <div class="btn" @click="append(4)">4</div>
-      <div class="btn" @click="append(5)">5</div>
-      <div class="btn" @click="append(6)">6</div>
-      <div class="btn operator" @click="subtract" :class="opclicked">-</div>
-      <div class="btn" @click="append(1)">1</div>
-      <div class="btn" @click="append(2)">2</div>
-      <div class="btn" @click="append(3)">3</div>
-      <div class="btn operator" @click="add" :class="opclicked">+</div>
-      <div class="btn zero" @click="append(0)">0</div>
-      <div class="btn" @click="dot">.</div>
-      <div class="btn operator" @click="equal">=</div>
-  </div>
+    <div>
+        <div class="calculator">
+            <div class="display">
+                <div class="topbar">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+                <div class="text">
+                    {{ current || '0'}}
+                </div>
+            </div>
+            <div class="btn" @click="clear">AC</div>
+            <div class="btn" @click="sign">+ / -</div>
+            <div class="btn" @click="percent">%</div>
+            <div class="btn operator" @click="divide" :class="opclicked">/</div>
+            <div class="btn" @click="append(7)">7</div>
+            <div class="btn" @click="append(8)">8</div>
+            <div class="btn" @click="append(9)">9</div>
+            <div class="btn operator" @click="multiply" :class="opclicked">x</div>
+            <div class="btn" @click="append(4)">4</div>
+            <div class="btn" @click="append(5)">5</div>
+            <div class="btn" @click="append(6)">6</div>
+            <div class="btn operator" @click="subtract" :class="opclicked">-</div>
+            <div class="btn" @click="append(1)">1</div>
+            <div class="btn" @click="append(2)">2</div>
+            <div class="btn" @click="append(3)">3</div>
+            <div class="btn operator" @click="add" :class="opclicked">+</div>
+            <div class="btn zero" @click="append(0)">0</div>
+            <div class="btn" @click="dot">.</div>
+            <div class="btn operator" @click="equal">=</div>
+        </div>
+        
+        <div class="footer">
+            Neelansh Mathur
+        </div>
+    </div>
 </template>
 
 <script>
@@ -176,5 +182,15 @@ export default {
 }
 .operator.clicked{
     background-color: rgb(255, 193, 77);
+}
+.footer{
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 4px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 </style>
