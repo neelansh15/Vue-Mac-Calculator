@@ -25,9 +25,6 @@ jobs:
 
     - name: Run NPM Build
       run: npm run build
-      
-    - name: ESLint Action
-      uses: hallee/eslint-action@1.0.1
     
   deploy:
     name: deploy
